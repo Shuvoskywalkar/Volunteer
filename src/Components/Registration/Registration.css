@@ -1,0 +1,26 @@
+
+.registrationForm{
+    position: absolute;
+width: 570px;
+height: 591px;
+left: 370px;
+top: 130px;
+
+background: #FFFFFF;
+border: 1px solid #ABABAB;
+box-sizing: border-box;
+border-radius: 4px
+}
+.regInput{
+
+border-top: none;
+border-left: none;
+border-right: none;
+border-bottom: none;
+width: 462px;
+height: 40px;
+left: 489px;
+top: 230px;
+border-radius: none;
+
+}
