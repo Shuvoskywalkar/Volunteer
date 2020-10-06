@@ -5,8 +5,7 @@ import { UserContext} from '../../App';
 
 const PrivateRoute = ({ children, ...rest }) => {
   const [loggedin]=useContext(UserContext)   
-  //loggedin ke paynai....
-  console.log(loggedin) 
+ 
   return (
 
           <Route

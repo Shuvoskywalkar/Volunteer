@@ -14,12 +14,13 @@ import "firebase/auth";
 import { useContext } from 'react';
 import {UserContext} from '../../App'
 import { privateContext } from '../PrivateRoute/PrivateRoute';
+import { useHistory, useLocation } from 'react-router-dom';
 const Login = () => {
     if (firebase.apps==0) {
 firebase.initializeApp(firebaseConfig)        
     }
     const[loggedin,setloggedin]=useContext(UserContext)
-const [newUser,setNewuser]=useState(false)
+
 
     const[User,SetUser]=useState({
         signedIn:false,
@@ -30,7 +31,9 @@ const [newUser,setNewuser]=useState(false)
         library:"", 
         password:"nothing"
     })
-    
+    const history=useHistory()
+const location=useLocation()
+let { from } = location.state || { from: { pathname: "/" } };
     const provider = new firebase.auth.GoogleAuthProvider();
 
 const googleSignin=()=>{
@@ -45,7 +48,8 @@ const googleSignin=()=>{
         
          SetUser(newUserInfo)
          setloggedin(newUserInfo)
-        console.log(newUserInfo)
+        // console.log(newUserInfo)
+        history.replace(from)
 
           })
                     .catch(function(error) {

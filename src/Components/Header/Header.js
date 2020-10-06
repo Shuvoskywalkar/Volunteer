@@ -2,19 +2,19 @@ import React from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../../App';
 
-import Programs from '../programs/Programs';
-import Description from './Description';
+
+
 import './Header.css'
 const Header = () => {
   const [loggedin,setloggedin]=useContext(UserContext)
-  console.log(loggedin)
+  
     return (
-        <body>
+     
             
        
         
 <nav class="navbar navbar-expand-lg navbar-light ">
-  <a class="navbar" href="#"><img src={'https://i.imgur.com/SuVq6gP.png'} alt="img not showing" className="w-25" srcset=""/></a>
+  <a class="navbar" href="/home"><img src={'https://i.imgur.com/SuVq6gP.png'} alt="img not showing" className="w-25" srcset=""/></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -35,15 +35,15 @@ const Header = () => {
      {loggedin.Email?
      
   <li class="nav-item ">
-  <a class="nav-link text-light bg-primary mx-2 headerNav" href="#">{loggedin.name}</a>
+  <a class="nav-link text-dark bg-light mx-2 headerNav" href="#">{loggedin.name}</a>
 </li>  
    :
    <li class="nav-item ">
-   <a class="nav-link text-light  mx-2 headerNav" href="#">Register</a>
+   <a class="nav-link text-light  mx-2 headerNav bg-primary" href="#">Register</a>
  </li>
     }
       <li class="nav-item active">
-        <a class="nav-link text-light bg-dark mx-2 headerNav" href="#">Admin</a>
+        <a class="nav-link text-light bg-dark mx-2 headerNav" href="/Admin">Admin</a>
       </li>
     </ul>
   
@@ -51,7 +51,7 @@ const Header = () => {
 </nav>
         
        
-        </body>
+
     );
 };
 

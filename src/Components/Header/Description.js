@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Description.css'
 import Programs from '../programs/Programs'
 
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { UserContext } from '../../App';
 const Description = () => {
     // const postatonce=()=>{
     //     fetch('http://localhost:5000/PostedFakedata',{
@@ -15,11 +16,12 @@ const Description = () => {
     // }
     const [productFromDatabase,setProductFromDatabase]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/getproducts')
+        fetch('https://evening-ravine-07787.herokuapp.com/getproducts')
         .then(res=>res.json())
         .then(data=>setProductFromDatabase(data))
     },[])
-    // console.log(productFromDatabase)
+//     console.log(productFromDatabase)
+//  const[productFromDatabase]=useContext(UserContext)
     return (
         <div>
             <h1>I Grow By Helping People In Need</h1>
