@@ -8,15 +8,15 @@ const Programs = (props) => {
     return (
              
                <div className="col-md-3 my-5 " >
-                    
+  <Link to={"/Registration/"+key}>
                    <div className="imagebox" >
-                   <Link to={"/Registration/"+key}>
+                 
                    <img src={image} alt="" srcset="" className="img-fluid p-2" style={{height:'300px'}}/>
-                   </Link>
-                    <h5 className="mb-5">{name}</h5>
-  
+                  
+                    <h5 className="mb-5 text-light">{name}</h5>
+                
                    </div>
-              
+                   </Link>
                                </div>
            
         
